@@ -12,7 +12,7 @@ import postcss from 'postcss';
 
 const packageJson = JSON.parse(readFileSync('./package.json').toString());
 
-const outputPath = 'dist/js/materialize';
+const outputPath = 'dist_mod/js/materialize';
 
 const version = packageJson.version;
 
@@ -79,7 +79,7 @@ const config: RollupOptions[] = [
   //--- CSS
   {
     input: 'sass/materialize-mod.scss',
-    output: [{ file: 'dist/css/materialize.min.css' }], // overwritten
+    output: [{ file: 'dist_mod/css/materialize.min.css' }], // overwritten
     plugins: [
       scss({
         fileName: 'materialize.min.css',
@@ -98,7 +98,7 @@ const config: RollupOptions[] = [
   },
   {
     input: 'sass/materialize-mod.scss',
-    output: [{ file: 'dist/css/materialize.css' }], // overwritten
+    output: [{ file: 'dist_mod/css/materialize.css' }], // overwritten
     plugins: [
       scss({
         fileName: 'materialize.css',
@@ -121,13 +121,13 @@ const config: RollupOptions[] = [
       copy({
         targets: [
           {
-            src: `dist/css/materialize.css`,
-            dest: `dist/css`,
+            src: `dist_mod/css/materialize.css`,
+            dest: `dist_mod/css`,
             transform: (contents) => [bannerText, contents].join('\n')
           },
           {
-            src: `dist/css/*.min.css`,
-            dest: `dist/css`,
+            src: `dist_mod/css/*.min.css`,
+            dest: `dist_mod/css`,
             transform: (contents) => [bannerText, contents.toString()].join('\n') // bug => workaround
           }
         ]
@@ -147,7 +147,7 @@ const config: RollupOptions[] = [
   //       level: 6
   //     },
   //     files: [
-  //       { expand: true, cwd: 'dist/', src: ['**/*'], dest: 'materialize/' },
+  //       { expand: true, cwd: 'dist_mod/', src: ['**/*'], dest: 'materialize/' },
   //       { expand: true, cwd: './', src: ['LICENSE', 'README.md'], dest: 'materialize/' }
   //     ]
   //   },
@@ -160,7 +160,7 @@ const config: RollupOptions[] = [
   //       { expand: true, cwd: 'sass/', src: ['materialize-mod.scss'], dest: 'materialize-src/sass/' },
   //       { expand: true, cwd: 'sass/', src: ['components/**/*'], dest: 'materialize-src/sass/' },
   //       { expand: true, cwd: 'src/', src: ['**/*'], dest: 'materialize-src/ts/' },
-  //       { expand: true, cwd: 'dist/js/', src: ['**/*'], dest: 'materialize-src/js/bin/' },
+  //       { expand: true, cwd: 'dist_mod/js/', src: ['**/*'], dest: 'materialize-src/js/bin/' },
   //       { expand: true, cwd: './', src: ['LICENSE', 'README.md'], dest: 'materialize-src/' }
   //     ]
   //   }

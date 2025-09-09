@@ -1,14 +1,15 @@
+import babel from "@rollup/plugin-babel"
 import type { RollupOptions } from 'rollup';
 
 import typescriptPlugin from '@rollup/plugin-typescript';
 import terserPlugin from '@rollup/plugin-terser';
-import dtsPlugin from 'rollup-plugin-dts';
 import scss from 'rollup-plugin-scss';
 import copy from 'rollup-plugin-copy';
 
 import { readFileSync } from 'fs';
 import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
+
 const packageJson = JSON.parse(readFileSync('./package.json').toString());
 
 const outputPath = 'dist/js/materialize';
@@ -51,7 +52,14 @@ const config: RollupOptions[] = [
   //--- JS
   {
     input: 'src/index-mod.ts',
-    plugins: [typescriptPlugin()],
+    plugins: [
+      typescriptPlugin(),
+      babel({
+        babelHelpers: 'bundled',
+        extensions: ['.js', '.ts'],
+        exclude: 'node_modules/**'
+      }),
+    ],
     output: [
       {
         name: 'M',

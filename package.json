@@ -34,7 +34,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "npm run build && jasmine-browser-runner runSpecs",
-    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "build": "rollup --config rollup.config.mod.ts --configPlugin @rollup/plugin-typescript",
     "release": "npm run lint && npm run build -- --environment BUILD:release && node ci/compress.mjs",
     "preversion": "npm run lint && npm test",
     "version": "npm run build -- --environment BUILD:release && node ci/compress.mjs && git add ."

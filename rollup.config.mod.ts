@@ -30,7 +30,7 @@ const config: RollupOptions[] = [
       copy({
         targets: [
           {
-            src: `src/index_mod.ts`,
+            src: `src/index-mod.ts`,
             dest: `src`,
             transform: (contents) =>
               contents

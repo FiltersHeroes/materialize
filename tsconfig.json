@@ -18,6 +18,7 @@
     "test",
     "src",
     "src/**/*",
-    "rollup.config.ts"
+    "rollup.config.ts",
+    "rollup.config.mod.ts"
   ]
 }

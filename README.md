@@ -62,10 +62,13 @@ Materialize is compatible with:
 - Edge
 
 ## Testing
-We use Jasmine as our testing framework and we're trying to write a robust test suite for our components. If you want to help, [here's a starting guide on how to write tests in Jasmine](CONTRIBUTING.md#jasmine-testing-guide).
+We use Jasmine as our testing framework and we're trying to write a robust test suite for our components. If you want to help, [here's a starting guide on how to write tests in Jasmine](docs/CONTRIBUTING.md#jasmine-testing-guide).
+
+## Quick Testing and Development
+For quick testing install live-server node package globally and run `npm run demo`
 
 ## Contributing
-Check out the [CONTRIBUTING document](CONTRIBUTING.md) in the root of the repository to learn how you can contribute. You can also browse the [help-wanted](https://github.com/materializecss/materialize/labels/help-wanted) tag in our issue tracker to find things to do.
+Check out the [CONTRIBUTING document](docs/CONTRIBUTING.md) in the root of the repository to learn how you can contribute. You can also browse the [help-wanted](https://github.com/materializecss/materialize/labels/help-wanted) tag in our issue tracker to find things to do.
 
 ## Sponsors
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/materialize#sponsor)]
@@ -88,4 +91,4 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 [![Backers](https://opencollective.com/materialize/backers.svg?width=890)](https://opencollective.com/materialize#backers)
 
 ## Copyright and license
-Code Copyright 2025 Materialize. Code released under the MIT license.
+Code Copyright 2026 Materialize. Code released under the MIT license.
